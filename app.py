@@ -1,19 +1,10 @@
-def add(*numbers):
-  """
-  This function takes any number of integer arguments and returns their sum.
+from flask import Flask
 
-  Args:
-      *numbers (int, optional): Any number of integer arguments. Defaults to an empty tuple.
+app=Flask(__name__)
 
-  Returns:
-      int: The sum of all the provided arguments, or 0 if no arguments are provided.
+@app.route("/")
+def home():
+    return "Hello World!"
 
-  Raises:
-      TypeError: If any non-integer argument is provided.
-  """
-  total = 0
-  for num in numbers:
-    if not isinstance(num, int):
-      raise TypeError("Only integer arguments are allowed.")
-    total += num
-  return total
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=5000)
