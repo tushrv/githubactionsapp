@@ -1,5 +1,5 @@
 import pytest
-import app
+from . import app
 def test_add_with_zero_arguments():
   assert app.add() == 0  # Or raise an error if preferred
 
