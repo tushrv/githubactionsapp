@@ -1,0 +1,20 @@
+name: Test app.py
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Adjust OS if needed
+
+    steps:
+      - uses: actions/checkout@v3  # Checkout code from repository
+      - name: Install Python dependencies
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'  # Specify Python version compatible with app.py
+      - name: Install testing framework (e.g., pytest)
+        run: pip install pytest  # Replace with your preferred testing framework
+      - name: Test app.py
+        run: pytest tests/  # Run tests from the 'tests' directory (adjust path)
