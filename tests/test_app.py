@@ -3,7 +3,7 @@ import os
 import sys
 
 root = os.path.dirname(os.path.dirname(__file__))
-sys.path.append("root")
+sys.path.append(root)
 
 import app
 def test_add_with_zero_arguments():
